@@ -22,6 +22,7 @@
                       }
                     }
                   });
+        console.log('.read and .fetchAll', pt, obv);
 
         $.when(pt, obv).fail(onError);
 
