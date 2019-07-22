@@ -33,13 +33,17 @@
         $.when(pt, obv).fail(onError);
 
         $.when(pt, diagnostic).done(function(patient, diagnostic) {
-          var byCodes = smart.byCodes(diagnostic, 'code');
-          console.log('diagnostic inside when', diagnostic);
-          var p = defaultPatient();
-          var presented = diagnostic[0].presentedForm;
-          var performer = diagnostic[0].performer.display;
-          p.presented = presented;
-          p.performer = performer;
+          if(diagnostic.length > 0){
+            var byCodes = smart.byCodes(diagnostic, 'code');
+            console.log('diagnostic inside when', diagnostic);
+            var p = defaultPatient();
+            var presented = diagnostic[0].presentedForm;
+            var performer = diagnostic[0].performer.display;
+            console.log('presented', presented);
+            console.log('performer', performer);
+            p.presented = presented;
+            p.performer = performer;
+          }
         });
 
         $.when(pt, obv).done(function(patient, obv) {
