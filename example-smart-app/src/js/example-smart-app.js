@@ -53,7 +53,8 @@
 
             Http.onreadystatechange = (e) => {
               console.log('testing http get html', Http.responseText);
-
+            }
+            
             const Http2 = new XMLHttpRequest();
             const url2= (presented[1].url).replace(/ehr/, 'open');
             console.log('url2', url2);
