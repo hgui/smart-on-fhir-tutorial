@@ -47,7 +47,7 @@
             const url= (presented[0].url).replace(/ehr/, 'open');
             console.log('url', url);
             Http.open("GET", url);
-            Http.setRequestHeader("Accept", 'application/html');
+            Http.setRequestHeader("Accept", presented[0].contentType);
             Http.send();
             console.log("REFRESHED");
 
@@ -58,7 +58,7 @@
             const url2= (presented[1].url).replace(/ehr/, 'open');
             console.log('url2', url2);
             Http2.open("GET", url2);
-            Http2.setRequestHeader("Accept", 'application/pdf');
+            Http2.setRequestHeader("Accept", presented[1].contentType);
             Http2.send();
 
             Http.onreadystatechange = (e) => {
