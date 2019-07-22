@@ -25,8 +25,8 @@
                     }
                   });
         console.log('.read and .fetchAll', pt, obv);
-        console.log('checking codes- height', byCodes('8302-2'));
-        console.log('checking diagnositc report', byCodes('50398-7'));
+        console.log('checking codes- height', smart.byCodes('8302-2'));
+        console.log('checking diagnositc report', smart.byCodes('50398-7'));
 
         $.when(pt, obv).fail(onError);
 
