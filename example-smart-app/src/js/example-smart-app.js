@@ -35,6 +35,11 @@
         $.when(pt, diagnostic).done(function(patient, diagnostic) {
           var byCodes = smart.byCodes(diagnostic, 'code');
           console.log('diagnostic inside when', diagnostic);
+          var p = defaultPatient();
+          var presented = diagnostic[0].presentedForm;
+          var performer = diagnostic[0].performer.display;
+          p.presented = presented;
+          p.performer = performer;
         });
 
         $.when(pt, obv).done(function(patient, obv) {
@@ -105,6 +110,8 @@
       diastolicbp: {value: ''},
       ldl: {value: ''},
       hdl: {value: ''},
+      presented: {value: ''},
+      performer: {value: ''},
     };
   }
 
