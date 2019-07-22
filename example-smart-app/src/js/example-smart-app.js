@@ -43,6 +43,14 @@
             p.performer = performer;
             console.log('presented', p.presented);
             console.log('performer', p.performer);
+            const Http = new XMLHttpRequest();
+            const url='https://jsonplaceholder.typicode.com/posts';
+            Http.open("GET", url);
+            Http.send();
+
+            Http.onreadystatechange = (e) => {
+              console.log('testing http get', Http.responseText);
+            }
           }
         });
 
