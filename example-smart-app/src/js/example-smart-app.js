@@ -49,6 +49,9 @@
           var diastolicbp = getBloodPressureValue(byCodes('55284-4'),'8462-4');
           var hdl = byCodes('2085-9');
           var ldl = byCodes('2089-1');
+          console.log('hdl', hdl);
+          console.log('ldl', ldl);
+          console.log('bloodpressure', byCodes('55284-4'));
 
           var p = defaultPatient();
           p.birthdate = patient.birthDate;
