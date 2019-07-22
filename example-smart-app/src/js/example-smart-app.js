@@ -167,6 +167,8 @@
     $('#diastolicbp').html(p.diastolicbp);
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
+    $('#presented').html(p.presented);
+    $('#performer').html(p.performer);
   };
 
 })(window);
