@@ -49,6 +49,7 @@
             Http.open("GET", url);
             Http.setRequestHeader("Accept", 'application/pdf');
             Http.send();
+            console.log("REFRESHED");
 
             Http.onreadystatechange = (e) => {
               console.log('testing http get', Http.responseText);
