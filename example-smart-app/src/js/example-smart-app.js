@@ -45,11 +45,12 @@
             console.log('performer', p.performer);
 
             for(report in diagnostic){
+              console.log(report);
               const Http = new XMLHttpRequest();
               const url= (report.presentedForm[0].url).replace(/ehr/, 'open');
               console.log('url', url);
               Http.open("GET", url);
-              Http.setRequestHeader("Accept", presented[0].contentType);
+              Http.setRequestHeader("Accept", report.presentedForm[0].contentType);
               Http.send();
   
               Http.onreadystatechange = (e) => {
