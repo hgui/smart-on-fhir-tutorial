@@ -47,12 +47,22 @@
             const url= (presented[0].url).replace(/ehr/, 'open');
             console.log('url', url);
             Http.open("GET", url);
-            Http.setRequestHeader("Accept", 'application/pdf');
+            Http.setRequestHeader("Accept", 'application/html');
             Http.send();
             console.log("REFRESHED");
 
             Http.onreadystatechange = (e) => {
-              console.log('testing http get', Http.responseText);
+              console.log('testing http get html', Http.responseText);
+
+            const Http2 = new XMLHttpRequest();
+            const url2= (presented[1].url).replace(/ehr/, 'open');
+            console.log('url2', url2);
+            Http2.open("GET", url2);
+            Http2.setRequestHeader("Accept", 'application/pdf');
+            Http2.send();
+
+            Http.onreadystatechange = (e) => {
+              console.log('testing http2 get pdf', Http2.responseText);
             }
           }
         });
