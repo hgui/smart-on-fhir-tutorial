@@ -43,28 +43,28 @@
             p.performer = performer;
             console.log('presented', p.presented);
             console.log('performer', p.performer);
+
             const Http = new XMLHttpRequest();
             const url= (presented[0].url).replace(/ehr/, 'open');
             console.log('url', url);
             Http.open("GET", url);
             Http.setRequestHeader("Accept", presented[0].contentType);
             Http.send();
-            console.log("REFRESHED");
 
             Http.onreadystatechange = (e) => {
               console.log('testing http get html', Http.responseText);
             }
-            
-            const Http2 = new XMLHttpRequest();
-            const url2= (presented[1].url).replace(/ehr/, 'open');
-            console.log('url2', url2);
-            Http2.open("GET", url2);
-            Http2.setRequestHeader("Accept", presented[1].contentType);
-            Http2.send();
 
-            Http.onreadystatechange = (e) => {
-              console.log('testing http2 get pdf', Http2.responseText);
-            }
+            // const Http2 = new XMLHttpRequest();
+            // const url2= (presented[1].url).replace(/ehr/, 'open');
+            // console.log('url2', url2);
+            // Http2.open("GET", url2);
+            // Http2.setRequestHeader("Accept", presented[1].contentType);
+            // Http2.send();
+
+            // Http.onreadystatechange = (e) => {
+            //   console.log('testing http2 get pdf', Http2.responseText);
+            // }
           }
         });
 
