@@ -18,17 +18,22 @@
                       code: {
                         $or: ['http://loinc.org|8302-2', 'http://loinc.org|8462-4',
                               'http://loinc.org|8480-6', 'http://loinc.org|2085-9',
-                              'http://loinc.org|2089-1', 'http://loinc.org|55284-4']
+                              'http://loinc.org|2089-1', 'http://loinc.org|55284-4',
+                              'http://loinc.org|50398-7'
+                            ]
                       }
                     }
                   });
         console.log('.read and .fetchAll', pt, obv);
+        console.log('checking codes- height', byCodes('8302-2'));
+        console.log('checking diagnositc report', byCodes('50398-7'));
 
         $.when(pt, obv).fail(onError);
 
         $.when(pt, obv).done(function(patient, obv) {
           console.log('patient', patient);
           var byCodes = smart.byCodes(obv, 'code');
+          console.log('byCodes', byCodes);
           var gender = patient.gender;
 
           var fname = '';
