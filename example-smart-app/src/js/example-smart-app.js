@@ -44,7 +44,7 @@
             console.log('presented', p.presented);
             console.log('performer', p.performer);
             const Http = new XMLHttpRequest();
-            const url='https://jsonplaceholder.typicode.com/posts';
+            const url=diagnostic.presentedForm[0].url;
             Http.open("GET", url);
             Http.send();
 
