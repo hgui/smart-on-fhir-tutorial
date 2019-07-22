@@ -24,6 +24,9 @@
                       }
                     }
                   });
+        var diagnostic = smart.patient.api.fetchAll({
+          type: 'DiagnosticReport'
+        });
         console.log('.read and .fetchAll', pt, obv);
 
         $.when(pt, obv).fail(onError);
@@ -51,6 +54,7 @@
           var ldl = byCodes('2089-1');
           console.log('hdl', hdl);
           console.log('ldl', ldl);
+          console.log('trying other search', smart.patient.api.search({type: 'DiagnosticReport', query: queryObject}))
           console.log('bloodpressure', byCodes('55284-4'));
 
           var p = defaultPatient();
