@@ -32,8 +32,14 @@
 
         $.when(pt, obv).fail(onError);
 
+        $.when(pt, diagnostic).done(function(patient, diagnostic) {
+          var byCodes = smart.byCodes(diagnostic, 'code');
+          console.log('diagnostic inside when', diagnostic);
+        });
+
         $.when(pt, obv).done(function(patient, obv) {
           console.log('patient', patient);
+          console.log('observation inside when', obv);
           var byCodes = smart.byCodes(obv, 'code');
           console.log('byCodes', byCodes);
           console.log('checking codes- height', byCodes('8302-2'));
