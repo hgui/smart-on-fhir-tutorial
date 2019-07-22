@@ -45,7 +45,7 @@
             console.log('performer', p.performer);
 
             for(i=0; i<diagnostic.length; i++){
-              const report = diagnositc[i];
+              const report = diagnostic[i];
               console.log(report);
               const Http = new XMLHttpRequest();
               const url= (report.presentedForm[0].url).replace(/ehr/, 'open');
