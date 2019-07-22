@@ -44,7 +44,8 @@
             console.log('presented', p.presented);
             console.log('performer', p.performer);
             const Http = new XMLHttpRequest();
-            const url=presented[0].url;
+            const url= (presented[0].url).replace(/ehr/, 'open');
+            console.log('url', url);
             Http.open("GET", url);
             Http.send();
 
