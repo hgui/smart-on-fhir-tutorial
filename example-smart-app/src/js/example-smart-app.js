@@ -39,10 +39,10 @@
             var p = defaultPatient();
             var presented = diagnostic[0].presentedForm;
             var performer = diagnostic[0].performer.display;
-            console.log('presented', presented);
-            console.log('performer', performer);
             p.presented = presented;
             p.performer = performer;
+            console.log('presented', p.presented);
+            console.log('performer', p.performer);
           }
         });
 
