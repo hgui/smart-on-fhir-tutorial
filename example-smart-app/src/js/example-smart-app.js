@@ -35,6 +35,7 @@
             },
           }
         });
+        console.log('query by date');
         console.log('diagnostic', diagnostic);
         console.log('.read and .fetchAll', pt, obv);
 
