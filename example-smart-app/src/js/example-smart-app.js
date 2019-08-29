@@ -25,7 +25,15 @@
                     }
                   });
         var diagnostic = smart.patient.api.fetchAll({
-          type: 'DiagnosticReport'
+          type: 'DiagnosticReport',
+          query: {
+            date: {
+              $and: [
+                'ge2013-01-01',
+                'le2018-09-01'
+              ]
+            },
+          }
         });
         console.log('diagnostic', diagnostic);
         console.log('.read and .fetchAll', pt, obv);
