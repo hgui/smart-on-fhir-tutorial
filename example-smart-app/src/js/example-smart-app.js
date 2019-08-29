@@ -57,7 +57,7 @@
               const report = diagnostic[i];
               console.log(report);
               const Http = new XMLHttpRequest();
-              const url= (report.presentedForm[0].url).replace(/ehr/, 'open');
+              // const url= (report.presentedForm[0].url).replace(/ehr/, 'open');
               console.log('url', url);
               Http.open("GET", url);
               Http.setRequestHeader("Accept", report.presentedForm[0].contentType);
